@@ -5,8 +5,14 @@
 
 #load packages
 library(data.table)
-library(ggpolt2)
+library(ggplot2)
 #read data
-files <- dir(pattern = "(csv|CSV)", full.names = TRUE) # get path n filenames
-datafiles <- lapply(files, data.table::fread) # read data from files, 
-names(datafiles) <- files # assign names to list items
+
+things=read.csv("all-things.csv")
+View(dead)
+dead=read.csv("dead-ii.csv",sep=";",header = FALSE)
+names(dead)=c("person_id","death_age")
+living=read.csv("living-ii.csv",sep=";",header=FALSE)
+names(living)=c("person_id","age")
+thing=read.csv("all-things.csv",sep=";",header=FALSE)
+names(things)="things_id"

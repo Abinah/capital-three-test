@@ -21,5 +21,5 @@ plot= qplot(x=object, y=no_of_times_owned,main="top100 owned things", fill=objec
 plot
 
 #so the top 100 oned things by both the living and dead
-top100_things=top100[,1]
-
+top100_things=as.data.frame(top100[,1])
+write.table(top100_things,file="top100.csv",sep=" ")

@@ -6,3 +6,4 @@ dead=read.csv("dead-things-ii.csv",sep=";",header=FALSE)
 names(dead)=c("person_id","object_id")
 #query
 data=sqldf('SELECT  object_id FROM living WHERE object_id not in (select object_id from dead)')
+write.table(data,file="thingsbylingnotdead.csv",sep=" ")

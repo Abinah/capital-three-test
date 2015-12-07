@@ -11,8 +11,9 @@ things=thing_table[order(-rank(thing_table$N))]
 #get the top 100 things
 #subset the data get only the top 100 rows
 top100things2=things[1:100]
-#so the top 100 things owned by the dead are
-top100things2[,top100things2$V1]
+#so the top 100 things owned by the living are
+top100living=(top100things2[,top100things2$V1])
+write.table(top100living,file="top100living.csv",sep=" ")
 
 #visualize them on a bar plot
 plot= qplot(x=V1, y=N,main="top100 owned things owned by the living", fill=V1,
